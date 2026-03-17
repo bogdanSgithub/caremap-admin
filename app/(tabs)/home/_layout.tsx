@@ -9,8 +9,8 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerTransparent: true, headerTitle: '',
         headerRight: () => 
-        (<Pressable style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-            <Entypo name='plus' size={23} onPress={() => router.push('/create')}/>
+        (<Pressable style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} onPress={() => router.push('/create')}>
+            <Entypo name='plus' size={23}/>
             <Text style={{ fontSize: 20, paddingRight: 4 }}>Donate</Text>
         </Pressable>)
         }}/>
