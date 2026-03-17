@@ -1,35 +1,22 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Icon, NativeTabs } from 'expo-router/unstable-native-tabs';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+    <NativeTabs>
+      <NativeTabs.Trigger name="home" options={{ title: 'Home' }}>
+        <Icon sf={{ default: 'house', selected: 'house.fill' }} drawable="custom_home_drawable" />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="search" role='search'>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="watchlist" options={{ title: 'Watchlist' }}>
+        <Icon sf={{ default: 'bookmark', selected: 'bookmark.fill' }} drawable="custom_watchlist_drawable" />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="chat" options={{ title: 'Chat' }}>
+        <Icon sf={{ default: 'bubble.middle.bottom', selected: 'bubble.middle.bottom.fill' }} drawable="custom_chat_drawable" />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="profile" options={{ title: 'Profile' }}>
+        <Icon sf={{ default: 'person', selected: 'person.fill' }} drawable="custom_chat_drawable" />
+      </NativeTabs.Trigger>
+    </NativeTabs>
   );
 }
