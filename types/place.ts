@@ -25,7 +25,7 @@ export type Place = {
   latitude: number;
   longitude: number;
   phone: string | null;
-  website: string | null;
-  hours: PlaceHours | null;
+  website?: string | null;
+  hours?: PlaceHours | null;
   last_verified: string;
 };

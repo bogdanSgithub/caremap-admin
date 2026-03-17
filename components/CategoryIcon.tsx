@@ -1,6 +1,7 @@
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome6 } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
+// Categories
 export const CATEGORIES = [
   {
     id: "meals",
@@ -8,35 +9,19 @@ export const CATEGORIES = [
     icon: "fast-food",
     provider: "ion",
   },
+  
   {
-    id: "washroom",
-    name: "Washrooms & Showers",
-    icon: "shower",
-    provider: "fa6",
+    id: "fridge",
+    name: "Community Fridges",
+    icon: "food-bank",
+    provider: "material",
   },
+
   {
     id: "dropin",
     name: "Drop-in Centres",
     icon: "home-outline",
     provider: "ion",
-  },
-  {
-    id: "health",
-    name: "Health Services",
-    icon: "medical-services",
-    provider: "material",
-  },
-  {
-    id: "warming",
-    name: "Warming / Cooling Centres",
-    icon: "flame-outline",
-    provider: "ion",
-  },
-  {
-    id: "shelter",
-    name: "Shelters",
-    icon: "night-shelter",
-    provider: "material",
   },
   {
     id: "housing",
@@ -52,7 +37,16 @@ export const CATEGORIES = [
   },
 ];
 
+//category colors
+export const CATEGORY_COLORS: Record<string, string> = {
+  meals: "#FF7043",
+  fridge: "#4CAF50",
+  dropin: "#42A5F5",
+  housing: "#AB47BC",
+  other: "#9E9E9E",
+};
 
+// Icon renderer
 export const CategoryIcon = ({
   provider,
   name,
@@ -66,7 +60,7 @@ export const CategoryIcon = ({
 }) => {
   switch (provider) {
     case "fa6":
-      return <FontAwesome name={name} size={size} color={color} />;
+      return <FontAwesome6 name={name} size={size} color={color} />;
     case "material":
       return <MaterialIcons name={name} size={size} color={color} />;
     default:
