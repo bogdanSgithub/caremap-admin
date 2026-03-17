@@ -1,6 +1,6 @@
 import Entypo from '@expo/vector-icons/Entypo';
 import { router, Stack } from "expo-router";
-import { Pressable } from "react-native";
+import { Pressable, Text } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout() {
@@ -9,8 +9,9 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerTransparent: true, headerTitle: '',
         headerRight: () => 
-        (<Pressable>
-            <Entypo name='plus' size={26} onPress={() => router.push('/create')} style={{ marginLeft: 4 }}/>
+        (<Pressable style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Entypo name='plus' size={23} onPress={() => router.push('/create')}/>
+            <Text style={{ fontSize: 20, paddingRight: 4 }}>Donate</Text>
         </Pressable>)
         }}/>
         <Stack.Screen name="confirmation" options={{ headerTransparent: true, headerTitle: '',
