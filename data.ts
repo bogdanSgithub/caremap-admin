@@ -34,4 +34,29 @@ export const PLACES: Place[] = [{
     nextCloseTime: "22:00",
   },
   last_verified: new Date().toISOString(),
-}];
+},
+
+
+// Fridges added
+{
+  id: 2,
+  name: "Providence Manor Fridge",
+  category: "meals",
+  address: "298-258 Sydenham St, Kingston, ON K7K 3M6",
+  latitude: 44.23485596975918, 
+  longitude: -76.48649906945698,
+  phone: "+1 123-456-7890",
+  last_verified: new Date().toISOString(),
+},
+{
+  id: 3,
+  name: "Food Basics Fridge",
+  category: "meals",
+  address: "63 Barrack St, Kingston, ON K7K 7A9",
+  latitude: 44.23381854828244, 
+  longitude: -76.48062621855377,
+  phone: "+1 123-456-7890",
+  last_verified: new Date().toISOString(),
+}
+
+];
