@@ -34,8 +34,6 @@ export const PLACES: Place[] = [{
     nextCloseTime: "22:00",
   },
   last_verified: new Date().toISOString(),
-},
-
 
 // Fridges added
 {
@@ -71,3 +69,10 @@ export const PLACES: Place[] = [{
 }
 
 ];
+
+export const FOOD = {
+  name: "Donouts",
+  items: [
+    { name: "Donouts", qty: 3, price: 2 }
+  ],
+}
