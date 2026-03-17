@@ -1,8 +1,8 @@
 import { PRIMARY_COLOR } from "@/constants";
+import { FOOD } from "@/data";
 import { router, useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
-  ActivityIndicator,
   Image,
   StyleSheet,
   Text,
@@ -13,39 +13,17 @@ import {
 export default function Result() {
   const { image } = useLocalSearchParams();
   const [loading, setLoading] = useState(true);
-  const [food, setFood] = useState<any>(null);
-
-  useEffect(() => {
-    // fake AI delay
-    setTimeout(() => {
-      setFood({
-        name: "Donouts",
-        items: [
-          { name: "Noodles", qty: 1, price: 3 },
-          { name: "Tomato Sauce", qty: 1, price: 2 },
-          { name: "Cheese", qty: 1, price: 2 },
-        ],
-      });
-      setLoading(false);
-    }, 2500);
-  }, []);
+  const [food, setFood] = useState<any>(FOOD);
 
   const total =
-    food?.items.reduce((sum: number, item: any) => sum + item.price, 0) || 0;
+    food?.items.reduce((sum: number, item: any) => sum + item.price * 3, 0) || 0;
 
   return (
     <View style={styles.container}>
       {/* IMAGE */}
-      <Image source={{ uri: image as string }} style={styles.image} />
+      <Image source={require("../assets/donuts.jpg")} style={styles.image} />
 
-      {/* LOADING */}
-      {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator size="large" />
-          <Text>Analyzing image...</Text>
-        </View>
-      ) : (
-        <>
+      <>
           {/* TITLE */}
           <Text style={styles.title}>{food.name}</Text>
 
@@ -75,7 +53,6 @@ setTimeout(() => router.push('/(tabs)/home/confirmation'), 100);
             <Text style={styles.buttonText}>Donate</Text>
           </TouchableOpacity>
         </>
-      )}
     </View>
   );
 }

@@ -35,3 +35,11 @@ export const PLACES: Place[] = [{
   },
   last_verified: new Date().toISOString(),
 }];
+
+
+export const FOOD = {
+  name: "Donouts",
+  items: [
+    { name: "Donouts", qty: 3, price: 2 }
+  ],
+}
