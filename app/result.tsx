@@ -16,7 +16,7 @@ export default function Result() {
   const [food, setFood] = useState<any>(FOOD);
 
   const total =
-    food?.items.reduce((sum: number, item: any) => sum + item.price * 3, 0) || 0;
+  food?.items.reduce((sum: number, item: any) => sum + item.price * 3, 0) || 0;
 
   return (
     <View style={styles.container}>
