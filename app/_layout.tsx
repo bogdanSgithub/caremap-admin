@@ -7,7 +7,7 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }}/>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
-      <Stack.Screen name="create" options={{ headerBackButtonDisplayMode: 'minimal', headerTransparent: true, title: '' }}/>
+      <Stack.Screen name="create" options={{ headerShown: false }}/>
       <Stack.Screen name="result" options={{ headerBackButtonDisplayMode: 'minimal', title: 'Complete Donation', headerShadowVisible: false }}/>
     </Stack>
   </SafeAreaProvider>);

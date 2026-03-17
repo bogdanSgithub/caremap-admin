@@ -26,7 +26,7 @@ export default function Create() {
   const takePhoto = async () => {
     const photo = await cameraRef.current?.takePictureAsync();
     router.push({
-      pathname: "/result",
+      pathname: "/create/ai-detection",
       params: {
         image: photo?.uri,
       },
