@@ -41,7 +41,7 @@ export const PLACES: Place[] = [{
 {
   id: 2,
   name: "Providence Manor Fridge",
-  category: "meals",
+  category: "fridge",
   address: "298-258 Sydenham St, Kingston, ON K7K 3M6",
   latitude: 44.23485596975918, 
   longitude: -76.48649906945698,
@@ -51,10 +51,21 @@ export const PLACES: Place[] = [{
 {
   id: 3,
   name: "Food Basics Fridge",
-  category: "meals",
+  category: "fridge",
   address: "63 Barrack St, Kingston, ON K7K 7A9",
   latitude: 44.23381854828244, 
   longitude: -76.48062621855377,
+  phone: "+1 123-456-7890",
+  last_verified: new Date().toISOString(),
+},
+
+{
+  id: 101,
+  name: "Food Basics Fridge",
+  category: "meals",
+  address: "629 Princess St, Kingston, ON K7L 1E2",
+  latitude: 44.23723059748421, 
+  longitude: -76.50166401229721,
   phone: "+1 123-456-7890",
   last_verified: new Date().toISOString(),
 }
